@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th ="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Création de la facture</title>
+</head>
+<body>
+
+<form th:action = "@{/invoice}" method = "POST" th:object=" ${invoiceForm}">                        <!-- Object specifie lidentifiant de l"object a modifié, ou on met invoice et on supprime le nom donné dans le controlleur  -->
+    <p>Customer name<input type="text" th:field="*{customerName}"/></p>                      <!-- Spring MVC va utiliser le setter des proprietes pour leur attribuer une valeur -->
+    <p>Order number<input type="text" th:field="*{orderNumber}"/></p>
+    <input type="submit" value="OK">
+
+</form>
+
+
+</body>
+</html>
