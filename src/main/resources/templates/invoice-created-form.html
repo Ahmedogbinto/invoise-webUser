@@ -6,13 +6,16 @@
 </head>
 <body>
 
-<form th:action = "@{/invoice}" method = "POST" th:object=" ${invoiceForm}">                        <!-- Object specifie lidentifiant de l"object a modifié, ou on met invoice et on supprime le nom donné dans le controlleur  -->
-    <p>Customer name<input type="text" th:field="*{customerName}"/></p>                      <!-- Spring MVC va utiliser le setter des proprietes pour leur attribuer une valeur -->
+<form th:action = "@{/invoice}" method = "POST" th:object=" ${invoiceForm}">                               <!-- Object specifie lidentifiant de l"object a modifié, ou on met invoice et on supprime le nom donné dans le controlleur  -->
+
+    <p>Customer name<input type="text" th:field="*{customerName}"/></p>                                  <!-- Spring MVC va utiliser le setter des proprietes pour leur attribuer une valeur -->
+    <div th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></div>
+
     <p>Order number<input type="text" th:field="*{orderNumber}"/></p>
+    <div th:if="${#fields.hasErrors('orderNumber')}" th:errors="*{orderNumber}"></div>
+
     <input type="submit" value="OK">
 
 </form>
-
-
 </body>
 </html>
