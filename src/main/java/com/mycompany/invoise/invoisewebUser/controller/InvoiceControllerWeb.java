@@ -32,7 +32,7 @@ public class InvoiceControllerWeb {
     }
 
 
-    @PostMapping
+   /* @PostMapping
     public String createInvoiceUsing(@Valid @ModelAttribute InvoiceForm invoiceForm, BindingResult results){
        // String customerName = "Tesla";                                                                          Le formulaire fournira desormais cette information
         //invoice.setCustomerName(customerName);
@@ -44,9 +44,9 @@ public class InvoiceControllerWeb {
         invoice.setOrderNumber(invoiceForm.getOrderNumber());
         invoiceService.createInvoice(invoice);
         return "invoice-created";
-    }
+    }*/
 
-    @GetMapping("/home")
+   @GetMapping("/home")
     public String  displayHome(Model model){
         System.out.println(" La méthode display home a bien été invoqué");
          model.addAttribute("invoices",invoiceService.getInvoiceList());
@@ -54,14 +54,14 @@ public class InvoiceControllerWeb {
         return "invoice-home";
     }
 
-    @GetMapping("/{id}")
+     /*@GetMapping("/{id}")
     public String displayInvoice(@PathVariable("id") String number, Model model){                  // pour retourner un model et une vue pour resoudre le probleme de retour de la methode plus utilisation de addObject
-        System.out.println(" La méthode display invoice home a bien été invoqué");
+        System.out.println(" La méthode display invoice a bien été invoqué");
         model.addAttribute("invoice",invoiceService.getInvoiceByNumber(number));
 
         //req.setAttribute("invoices",invoices);                                          // Pour fournir un element de model a la vue mais ce n<est pqs le plus courant a utiliser
         return "invoice-details";
-    }
+    }*/
 
     @GetMapping("/create-form")
     public String displayInvoiceCreateForm(@ModelAttribute InvoiceForm invoiceForm){
