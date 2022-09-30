@@ -32,7 +32,7 @@ public class InvoiceControllerWeb {
     }
 
 
-   /* @PostMapping
+    @PostMapping("/create")
     public String createInvoiceUsing(@Valid @ModelAttribute InvoiceForm invoiceForm, BindingResult results){
        // String customerName = "Tesla";                                                                          Le formulaire fournira desormais cette information
         //invoice.setCustomerName(customerName);
@@ -44,7 +44,7 @@ public class InvoiceControllerWeb {
         invoice.setOrderNumber(invoiceForm.getOrderNumber());
         invoiceService.createInvoice(invoice);
         return "invoice-created";
-    }*/
+    }
 
    @GetMapping("/home")
     public String  displayHome(Model model){
