@@ -52,7 +52,7 @@ public class InvoiceControllerWeb {
 
    @GetMapping("/home")
     public String  displayHome(Model model){
-        System.out.println(" La méthode display home a bien été invoqué");
+        System.out.println(" La méthode list  a bien été invoqué");
          model.addAttribute("invoices",invoiceService.getInvoiceList());
         //req.setAttribute("invoices",invoices);                                       // Pour fournir un element de model a la vue mais ce n<est pqs le plus courant a utiliser
         return "invoice-home";
