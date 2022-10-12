@@ -39,7 +39,7 @@ public class InvoiceResource {
         return invoiceService.getInvoiceList();
     }
 
-    //Obtenin les details sur une facture
+    //Obtenir les details sur une facture
     @GetMapping("/{id}")
     public Invoice displayInvoice(@PathVariable("id") String number){                  // pour retourner un model et une vue pour resoudre le probleme de retour de la methode plus utilisation de addObject
         System.out.println(" La méthode display invoice a bien été invoqué");
