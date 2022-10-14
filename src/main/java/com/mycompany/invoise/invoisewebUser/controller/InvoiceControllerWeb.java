@@ -50,7 +50,6 @@ public class InvoiceControllerWeb {
         customer.setAddress(address);
 
 
-
         invoice.setOrderNumber(invoiceForm.getOrderNumber());
         invoiceService.createInvoice(invoice);
         return "invoice-created";
